@@ -1,26 +1,52 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #121212;
+  --panel: #1b1b1b;
+  --panel-2: #202020;
+  --line: rgba(255, 255, 255, 0.07);
+  --text: #f2f2f2;
+  --muted: #8a8a8a;
+  --accent: #f26a1b;
+  --good: #34c77b;
+  --bad: #ef5350;
+  --meta: #5b8def;
+  --google: #f5b73b;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-bg: var(--bg);
+  --color-panel: var(--panel);
+  --color-panel2: var(--panel-2);
+  --color-line: var(--line);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-good: var(--good);
+  --color-bad: var(--bad);
+  --color-meta: var(--meta);
+  --color-google: var(--google);
   --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
+
+/* react-day-picker: paleta do dashboard (seletor duplo vence o CSS da lib) */
+.rdp-root.trufer-calendar {
+  --rdp-accent-color: #f26a1b;
+  --rdp-accent-background-color: rgba(242, 106, 27, 0.2);
+  --rdp-range_middle-background-color: rgba(242, 106, 27, 0.18);
+  --rdp-range_middle-color: #ededed;
+  --rdp-today-color: #f26a1b;
+  --rdp-day_button-border-radius: 8px;
+  color: #ededed;
+  font-size: 13px;
+}
+.trufer-calendar .rdp-months { flex-wrap: nowrap; }
+.trufer-calendar .rdp-chevron { fill: #f26a1b; }
+.trufer-calendar .rdp-disabled { opacity: 0.3; }
+.trufer-calendar .rdp-selected .rdp-day_button { color: #fff; }
